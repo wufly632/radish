@@ -11,6 +11,6 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
-    $router->get('category', 'CategoryController@index');//分类
+    $router->match(['get','post'],'category', 'CategoryController@index');//分类
     $router->post('category/create', 'CategoryController@create');//分类
 });
